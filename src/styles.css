@@ -1,0 +1,231 @@
+/* ===========================
+   PREMIUM MARKET UI DESIGN
+=========================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(-45deg, #4f46e5, #7c3aed, #06b6d4, #6366f1);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  text-align: center;
+  padding: 30px 20px;
+  color: white;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+.header p {
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+/* ================= LAYOUT ================= */
+
+.layout {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  width: 280px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h3 {
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+/* ================= INPUTS ================= */
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.4);
+}
+
+/* ================= BUTTONS ================= */
+
+button {
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 5px 5px 5px 0;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Active Category */
+button.active {
+  background: white;
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+/* Clear Button */
+.clear-btn {
+  width: 100%;
+  background: #ff4d6d;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.clear-btn:hover {
+  background: #e11d48;
+}
+
+/* ================= MAIN ================= */
+
+.main {
+  flex: 1;
+}
+
+/* ================= PRODUCT GRID ================= */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+/* ================= PRODUCT CARD ================= */
+
+.card {
+  background: white;
+  border-radius: 25px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #6366f1, #06b6d4);
+  top: -150%;
+  left: -150%;
+  transform: rotate(45deg);
+  opacity: 0.1;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+.card img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.card h4 {
+  font-size: 14px;
+  min-height: 45px;
+}
+
+.card p {
+  margin: 6px 0;
+}
+
+.card p:nth-child(3) {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.card p:last-child {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+/* ================= PAGINATION ================= */
+
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+.pagination button {
+  background: white;
+  color: #4f46e5;
+  padding: 8px 18px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.pagination button:hover {
+  background: #4f46e5;
+  color: white;
+}
+
+/* ================= LOADING / EMPTY ================= */
+
+h2 {
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}
